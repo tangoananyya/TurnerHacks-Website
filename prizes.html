@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prizes | TurnerHacks 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>*{margin:0;padding:0;box-sizing:border-box;}
+:root{--cyan:#00f5ff;--magenta:#ff00aa;--yellow:#f5e642;--green:#39ff14;--dark:#030812;--dark2:#070f1f;--panel:#0d1f3c;--text:#c8deff;--mono:'Share Tech Mono',monospace;--title:'Orbitron',sans-serif;--body:'Rajdhani',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,245,255,0.01) 2px,rgba(0,245,255,0.01) 4px);pointer-events:none;z-index:9999;}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(3,8,18,0.88);border-bottom:1px solid rgba(0,245,255,0.12);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+.nav-logo{font-family:var(--title);font-size:1.1rem;font-weight:900;color:var(--cyan);letter-spacing:3px;text-decoration:none;text-shadow:0 0 20px rgba(0,245,255,0.4);}
+.nav-logo span{color:#fff;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{color:rgba(200,222,255,0.55);text-decoration:none;font-family:var(--mono);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--cyan);transition:width 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.btn-primary{font-family:var(--title);font-size:0.7rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;text-decoration:none;background:var(--cyan);color:var(--dark);padding:10px 24px;border:none;cursor:pointer;display:inline-block;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.2s;}
+.btn-primary:hover{background:#fff;box-shadow:0 0 30px rgba(0,245,255,0.5);}
+.btn-outline{font-family:var(--title);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;background:transparent;color:var(--cyan);padding:10px 24px;border:1px solid rgba(0,245,255,0.4);cursor:pointer;display:inline-block;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.2s;}
+.btn-outline:hover{background:rgba(0,245,255,0.08);}
+.si{padding:5rem 2rem;}
+.si-inner{max-width:1100px;margin:0 auto;}
+.sl{font-family:var(--mono);font-size:0.65rem;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:0.5rem;opacity:0.8;}
+.st{font-family:var(--title);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:1rem;line-height:1.1;}
+.sline{width:60px;height:3px;background:var(--cyan);margin-bottom:2.5rem;box-shadow:0 0 10px rgba(0,245,255,0.5);}
+.page-banner{min-height:45vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 2rem 5rem;position:relative;overflow:hidden;}
+.pb-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.2) saturate(0.5);}
+.pb-overlay{position:absolute;inset:0;}
+.pb-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,245,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.04) 1px,transparent 1px);background-size:60px 60px;}
+.pb-eyebrow{font-family:var(--mono);font-size:0.65rem;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:1.25rem;position:relative;z-index:1;opacity:0.7;}
+.pb-title{font-family:var(--title);font-size:clamp(3rem,9vw,6rem);font-weight:900;color:#fff;position:relative;z-index:1;line-height:0.9;text-shadow:0 0 60px rgba(0,245,255,0.3);}
+.pb-title .accent{color:var(--cyan);}
+.pb-sub{font-family:var(--mono);font-size:0.75rem;color:rgba(200,222,255,0.4);letter-spacing:3px;margin-top:1.5rem;position:relative;z-index:1;}
+.faq-item{border-bottom:1px solid rgba(0,245,255,0.08);}
+.faq-q{width:100%;background:none;border:none;color:#fff;font-family:var(--body);font-size:1.05rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;cursor:pointer;text-align:left;gap:1rem;transition:color 0.2s;}
+.faq-q:hover{color:var(--cyan);}
+.faq-arrow{color:var(--cyan);font-family:var(--mono);font-size:1.2rem;transition:transform 0.3s;flex-shrink:0;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;font-size:0.95rem;color:rgba(200,222,255,0.55);line-height:1.8;padding:0;}
+.faq-item.open .faq-arrow{transform:rotate(45deg);}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:1.5rem;}
+footer{background:var(--dark);border-top:1px solid rgba(0,245,255,0.07);padding:3rem 2rem;text-align:center;}
+.footer-logo{font-family:var(--title);font-size:1.5rem;font-weight:900;color:rgba(200,222,255,0.08);letter-spacing:6px;margin-bottom:1rem;}
+.footer-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;}
+.footer-links a{font-family:var(--mono);font-size:0.62rem;letter-spacing:2px;color:rgba(200,222,255,0.2);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+.footer-links a:hover{color:var(--cyan);}
+.footer-copy{font-family:var(--mono);font-size:0.6rem;color:rgba(200,222,255,0.12);letter-spacing:2px;}
+@media(max-width:700px){.nav-links{display:none;}}
+.prizes-hero{min-height:55vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.ph-left{background:var(--dark2);display:flex;flex-direction:column;justify-content:center;padding:9rem 4rem 5rem;position:relative;}
+.ph-left::after{content:'$5K+';position:absolute;right:-0.1em;top:50%;transform:translateY(-50%);font-family:var(--title);font-size:12rem;font-weight:900;color:rgba(0,245,255,0.04);line-height:1;pointer-events:none;}
+.ph-right{position:relative;background:var(--dark);display:grid;grid-template-rows:1fr 1fr 1fr;gap:2px;}
+.ph-prize{display:flex;flex-direction:column;justify-content:center;padding:2rem 3rem;position:relative;overflow:hidden;transition:background 0.3s;}
+.ph-prize:hover{background:rgba(255,255,255,0.02);}
+.ph-prize-bar{position:absolute;left:0;top:0;bottom:0;width:3px;}
+.ph-place{font-family:var(--mono);font-size:0.6rem;letter-spacing:3px;color:rgba(200,222,255,0.3);text-transform:uppercase;margin-bottom:0.25rem;}
+.ph-amount{font-family:var(--title);font-size:2.5rem;font-weight:900;line-height:1;}
+.ph-perks{font-size:0.85rem;color:rgba(200,222,255,0.45);margin-top:0.5rem;}
+.tracks-wall{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(0,245,255,0.05);}
+.tw{position:relative;overflow:hidden;min-height:280px;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem;background:var(--dark2);transition:all 0.4s;}
+.tw:hover{background:#0a1628;}
+.tw:hover .tw-name{color:var(--ac);}
+.tw-num{position:absolute;top:-0.1em;right:-0.05em;font-family:var(--title);font-size:9rem;font-weight:900;color:var(--ac);opacity:0.05;line-height:1;pointer-events:none;}
+.tw-bar{position:absolute;top:0;left:0;right:0;height:3px;background:var(--ac);}
+.tw-tag{font-family:var(--mono);font-size:0.6rem;letter-spacing:4px;color:var(--ac);text-transform:uppercase;margin-bottom:0.75rem;opacity:0.8;}
+.tw-icon{font-size:2.5rem;margin-bottom:1rem;display:block;filter:drop-shadow(0 0 16px var(--ac));}
+.tw-name{font-family:var(--title);font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:0.75rem;line-height:1.15;transition:color 0.3s;}
+.tw-desc{font-size:0.9rem;color:rgba(200,222,255,0.5);line-height:1.7;}
+@media(max-width:768px){.prizes-hero{grid-template-columns:1fr;}.ph-left{padding:8rem 2rem 4rem;}.tracks-wall{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<nav><a class="nav-logo" href="index.html">TURNER<span>HACKS</span></a><ul class="nav-links"><li><a href="about.html">About</a></li><li><a href="schedule.html">Schedule</a></li><li><a href="prizes.html" class="active">Prizes</a></li><li><a href="sponsors.html">Sponsors</a></li><li><a href="faq.html">FAQ</a></li></ul><a class="btn-primary" href="register.html">Register Free</a></nav>
+
+<div class="prizes-hero">
+  <div class="ph-left">
+    <p class="sl">// prizes &amp; tracks</p>
+    <h1 class="st" style="font-size:clamp(2.5rem,6vw,4.5rem);line-height:0.95;margin-bottom:1.5rem;">Win Big.<br/><span style="color:var(--cyan);">Build Bigger.</span></h1>
+    <p style="color:rgba(200,222,255,0.55);font-size:1.05rem;line-height:1.9;max-width:440px;">Over $5,000 in prizes across four challenge tracks. Cash, swag, recognition — and the satisfaction of having shipped something real.</p>
+    <p style="font-family:var(--mono);font-size:0.65rem;letter-spacing:3px;color:rgba(200,222,255,0.3);margin-top:2rem;">// additional track prizes + best first-time hacker award</p>
+  </div>
+  <div class="ph-right">
+    <div class="ph-prize" style="background:rgba(245,230,66,0.04);">
+      <div class="ph-prize-bar" style="background:#f5e642;box-shadow:0 0 15px rgba(245,230,66,0.5);"></div>
+      <div class="ph-place">🥇 &nbsp;1st Place</div>
+      <div class="ph-amount" style="color:#f5e642;">$2,500</div>
+      <div class="ph-perks">Cash + swag bag + Brampton City newsletter feature + trophy</div>
+    </div>
+    <div class="ph-prize" style="background:rgba(180,190,210,0.03);">
+      <div class="ph-prize-bar" style="background:#b4bedd;"></div>
+      <div class="ph-place">🥈 &nbsp;2nd Place</div>
+      <div class="ph-amount" style="color:#b4bedd;">$1,500</div>
+      <div class="ph-perks">Cash + tech accessories + certificates of excellence</div>
+    </div>
+    <div class="ph-prize" style="background:rgba(200,130,60,0.03);">
+      <div class="ph-prize-bar" style="background:#c8823c;"></div>
+      <div class="ph-place">🥉 &nbsp;3rd Place</div>
+      <div class="ph-amount" style="color:#c8823c;">$750</div>
+      <div class="ph-perks">Cash + sponsor gear + certificates</div>
+    </div>
+  </div>
+</div>
+
+<div style="background:var(--dark);padding:5rem 2rem 0 2rem;">
+  <div class="si-inner">
+    <p class="sl">// challenge tracks</p>
+    <h2 class="st">Pick Your <span style="color:var(--cyan);">Track.</span></h2>
+    <div class="sline"></div>
+  </div>
+</div>
+<div class="tracks-wall">
+  <div class="tw" style="--ac:#00f5ff;"><div class="tw-bar"></div><div class="tw-num">01</div><span class="tw-icon">🤖</span><div class="tw-tag">// Track 01</div><div class="tw-name">AI &amp; Machine Learning</div><div class="tw-desc">Chatbots, predictive models, NLP. Build something that learns.</div></div>
+  <div class="tw" style="--ac:#ff00aa;"><div class="tw-bar"></div><div class="tw-num">02</div><span class="tw-icon">🌍</span><div class="tw-tag">// Track 02</div><div class="tw-name">Social Impact</div><div class="tw-desc">Mental health, accessibility, food security. Tech that matters.</div></div>
+  <div class="tw" style="--ac:#f5e642;"><div class="tw-bar"></div><div class="tw-num">03</div><span class="tw-icon">🔧</span><div class="tw-tag">// Track 03</div><div class="tw-name">Hardware &amp; Robotics</div><div class="tw-desc">IoT, robots, wearables. Real wires, real ambition.</div></div>
+  <div class="tw" style="--ac:#7f4fff;"><div class="tw-bar"></div><div class="tw-num">04</div><span class="tw-icon">🌐</span><div class="tw-tag">// Track 04</div><div class="tw-name">Open Innovation</div><div class="tw-desc">No rules, no limits. Bold, weird, brilliant — just ship it.</div></div>
+</div>
+<div style="text-align:center;padding:4rem 2rem;">
+  <a class="btn-primary" href="register.html">Compete for These Prizes</a>
+</div>
+
+<footer>
+  <div class="footer-logo">TURNERHACKS 2026</div>
+  <div class="footer-links">
+    <a href="about.html">About</a><a href="schedule.html">Schedule</a><a href="prizes.html">Prizes</a><a href="sponsors.html">Sponsors</a><a href="faq.html">FAQ</a><a href="register.html">Register</a>
+  </div>
+  <div class="footer-copy">© 2026 TurnerHacks · Brampton City Hall · May 30, 2026</div>
+</footer>
+
+</body>
+</html>

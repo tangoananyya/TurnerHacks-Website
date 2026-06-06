@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Schedule | TurnerHacks 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>*{margin:0;padding:0;box-sizing:border-box;}
+:root{--cyan:#00f5ff;--magenta:#ff00aa;--yellow:#f5e642;--green:#39ff14;--dark:#030812;--dark2:#070f1f;--panel:#0d1f3c;--text:#c8deff;--mono:'Share Tech Mono',monospace;--title:'Orbitron',sans-serif;--body:'Rajdhani',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,245,255,0.01) 2px,rgba(0,245,255,0.01) 4px);pointer-events:none;z-index:9999;}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(3,8,18,0.88);border-bottom:1px solid rgba(0,245,255,0.12);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+.nav-logo{font-family:var(--title);font-size:1.1rem;font-weight:900;color:var(--cyan);letter-spacing:3px;text-decoration:none;text-shadow:0 0 20px rgba(0,245,255,0.4);}
+.nav-logo span{color:#fff;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{color:rgba(200,222,255,0.55);text-decoration:none;font-family:var(--mono);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--cyan);transition:width 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.btn-primary{font-family:var(--title);font-size:0.7rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;text-decoration:none;background:var(--cyan);color:var(--dark);padding:10px 24px;border:none;cursor:pointer;display:inline-block;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.2s;}
+.btn-primary:hover{background:#fff;box-shadow:0 0 30px rgba(0,245,255,0.5);}
+.btn-outline{font-family:var(--title);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;background:transparent;color:var(--cyan);padding:10px 24px;border:1px solid rgba(0,245,255,0.4);cursor:pointer;display:inline-block;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.2s;}
+.btn-outline:hover{background:rgba(0,245,255,0.08);}
+.si{padding:5rem 2rem;}
+.si-inner{max-width:1100px;margin:0 auto;}
+.sl{font-family:var(--mono);font-size:0.65rem;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:0.5rem;opacity:0.8;}
+.st{font-family:var(--title);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:1rem;line-height:1.1;}
+.sline{width:60px;height:3px;background:var(--cyan);margin-bottom:2.5rem;box-shadow:0 0 10px rgba(0,245,255,0.5);}
+.page-banner{min-height:45vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 2rem 5rem;position:relative;overflow:hidden;}
+.pb-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.2) saturate(0.5);}
+.pb-overlay{position:absolute;inset:0;}
+.pb-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,245,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.04) 1px,transparent 1px);background-size:60px 60px;}
+.pb-eyebrow{font-family:var(--mono);font-size:0.65rem;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:1.25rem;position:relative;z-index:1;opacity:0.7;}
+.pb-title{font-family:var(--title);font-size:clamp(3rem,9vw,6rem);font-weight:900;color:#fff;position:relative;z-index:1;line-height:0.9;text-shadow:0 0 60px rgba(0,245,255,0.3);}
+.pb-title .accent{color:var(--cyan);}
+.pb-sub{font-family:var(--mono);font-size:0.75rem;color:rgba(200,222,255,0.4);letter-spacing:3px;margin-top:1.5rem;position:relative;z-index:1;}
+.faq-item{border-bottom:1px solid rgba(0,245,255,0.08);}
+.faq-q{width:100%;background:none;border:none;color:#fff;font-family:var(--body);font-size:1.05rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;cursor:pointer;text-align:left;gap:1rem;transition:color 0.2s;}
+.faq-q:hover{color:var(--cyan);}
+.faq-arrow{color:var(--cyan);font-family:var(--mono);font-size:1.2rem;transition:transform 0.3s;flex-shrink:0;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;font-size:0.95rem;color:rgba(200,222,255,0.55);line-height:1.8;padding:0;}
+.faq-item.open .faq-arrow{transform:rotate(45deg);}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:1.5rem;}
+footer{background:var(--dark);border-top:1px solid rgba(0,245,255,0.07);padding:3rem 2rem;text-align:center;}
+.footer-logo{font-family:var(--title);font-size:1.5rem;font-weight:900;color:rgba(200,222,255,0.08);letter-spacing:6px;margin-bottom:1rem;}
+.footer-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;}
+.footer-links a{font-family:var(--mono);font-size:0.62rem;letter-spacing:2px;color:rgba(200,222,255,0.2);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+.footer-links a:hover{color:var(--cyan);}
+.footer-copy{font-family:var(--mono);font-size:0.6rem;color:rgba(200,222,255,0.12);letter-spacing:2px;}
+@media(max-width:700px){.nav-links{display:none;}}
+.sched-hero{min-height:50vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 4rem 4rem;position:relative;overflow:hidden;}
+.sched-hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1600&q=70');background-size:cover;background-position:center;filter:brightness(0.18) saturate(0.4);}
+.sched-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,var(--dark) 0%,rgba(3,8,18,0.4) 100%);}
+.sched-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,245,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.04) 1px,transparent 1px);background-size:60px 60px;}
+.sched-body{display:grid;grid-template-columns:1fr 3fr;gap:0;max-width:1100px;margin:0 auto;padding:5rem 2rem;}
+.sched-sidebar{padding-right:3rem;border-right:1px solid rgba(0,245,255,0.1);}
+.sched-sidebar-title{font-family:var(--title);font-size:1rem;font-weight:900;color:rgba(200,222,255,0.2);letter-spacing:3px;margin-bottom:2rem;text-transform:uppercase;}
+.sched-day-btn{display:block;font-family:var(--mono);font-size:0.7rem;letter-spacing:2px;color:rgba(200,222,255,0.35);text-transform:uppercase;padding:0.75rem 0;border:none;background:none;cursor:pointer;width:100%;text-align:left;border-bottom:1px solid rgba(0,245,255,0.06);transition:color 0.2s;}
+.sched-day-btn:hover,.sched-day-btn.active{color:var(--cyan);}
+.sched-main{padding-left:3rem;}
+.sched-day-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:2rem;opacity:0.7;}
+.event-row{display:grid;grid-template-columns:120px 1fr;gap:0;margin-bottom:0;border-left:1px solid rgba(0,245,255,0.12);position:relative;padding:2rem 0 2rem 2.5rem;transition:background 0.2s;}
+.event-row:hover{background:rgba(0,245,255,0.02);}
+.event-dot{position:absolute;left:-5px;top:2.4rem;width:9px;height:9px;border-radius:50%;background:var(--dark);border:2px solid var(--cyan);box-shadow:0 0 12px rgba(0,245,255,0.5);transition:background 0.2s;}
+.event-row:hover .event-dot{background:var(--cyan);}
+.event-time{font-family:var(--mono);font-size:0.75rem;color:var(--cyan);letter-spacing:1px;padding-top:3px;}
+.event-name{font-family:var(--title);font-size:1rem;font-weight:700;color:#fff;margin-bottom:0.3rem;letter-spacing:0.5px;}
+.event-desc{font-size:0.9rem;color:rgba(200,222,255,0.45);}
+.event-badge{display:inline-block;font-family:var(--mono);font-size:0.55rem;letter-spacing:2px;padding:3px 8px;border:1px solid;margin-left:0.75rem;vertical-align:middle;text-transform:uppercase;}
+@media(max-width:768px){.sched-body{grid-template-columns:1fr;}.sched-sidebar{border-right:none;padding-right:0;border-bottom:1px solid rgba(0,245,255,0.1);padding-bottom:2rem;margin-bottom:2rem;}.sched-main{padding-left:0;}}
+</style>
+</head>
+<body>
+<nav><a class="nav-logo" href="index.html">TURNER<span>HACKS</span></a><ul class="nav-links"><li><a href="about.html">About</a></li><li><a href="schedule.html" class="active">Schedule</a></li><li><a href="prizes.html">Prizes</a></li><li><a href="sponsors.html">Sponsors</a></li><li><a href="faq.html">FAQ</a></li></ul><a class="btn-primary" href="register.html">Register Free</a></nav>
+
+<div class="sched-hero">
+  <div class="sched-hero-bg"></div>
+  <div class="sched-hero-overlay"></div>
+  <div class="sched-hero-grid"></div>
+  <div style="position:relative;z-index:1;max-width:800px;">
+    <p class="sl">// event schedule</p>
+    <h1 class="st" style="font-size:clamp(3rem,8vw,5.5rem);line-height:0.9;">May 30<br/><span style="color:var(--cyan);">2026</span></h1>
+    <p style="font-family:var(--mono);font-size:0.75rem;color:rgba(200,222,255,0.4);letter-spacing:3px;margin-top:1.5rem;">// 24 hours · brampton city hall · peel region</p>
+  </div>
+</div>
+
+<div class="sched-body">
+  <div class="sched-sidebar">
+    <div class="sched-sidebar-title">Days</div>
+    <button class="sched-day-btn active" onclick="showDay('d1',this)">Day 1 — May 30</button>
+    <button class="sched-day-btn" onclick="showDay('d2',this)">Day 2 — May 31</button>
+  </div>
+  <div class="sched-main">
+    <div id="d1">
+      <div class="sched-day-label">// day 1 — may 30, 2026</div>
+      <div class="event-row"><div class="event-dot"></div><div class="event-time">8:00 AM</div><div><div class="event-name">Check-In &amp; Breakfast <span class="event-badge" style="color:#39ff14;border-color:#39ff14;">Start</span></div><div class="event-desc">Grab your badge, meet your team, fuel up.</div></div></div>
+      <div class="event-row"><div class="event-dot"></div><div class="event-time">9:30 AM</div><div><div class="event-name">Opening Ceremony</div><div class="event-desc">Welcome from organizers, sponsor shoutouts, track briefings.</div></div></div>
+      <div class="event-row"><div class="event-dot"></div><div class="event-time">10:00 AM</div><div><div class="event-name">Hacking Begins 🚀 <span class="event-badge" style="color:#00f5ff;border-color:#00f5ff;">Clocks Start</span></div><div class="event-desc">Build something incredible. You have 24 hours.</div></div></div>
+      <div class="event-row"><div class="event-dot"></div><div class="event-time">1:00 PM</div><div><div class="event-name">Lunch + Workshops</div><div class="event-desc">Sponsor-led workshops and mentorship sessions. Food provided.</div></div></div>
+      <div class="event-row"><div class="event-dot"></div><div class="event-time">7:00 PM</div><div><div class="event-name">Dinner &amp; Midpoint Check-In</div><div class="event-desc">Mentors make rounds. Judges take notes. Keep going.</div></div></div>
+      <div class="event-row"><div class="event-dot"></div><div class="event-time">Midnight</div><div><div class="event-name">Night Owl Mode 🦉</div><div class="event-desc">Late-night snacks. Power through. Greatness doesn't sleep.</div></div></div>
+    </div>
+    <div id="d2" style="display:none;">
+      <div class="sched-day-label">// day 2 — may 31, 2026</div>
+      <div class="event-row"><div class="event-dot"></div><div class="event-time">9:00 AM</div><div><div class="event-name">Submissions Close <span class="event-badge" style="color:#ff00aa;border-color:#ff00aa;">Deadline</span></div><div class="event-desc">Commit your code. Submit your devpost. No extensions.</div></div></div>
+      <div class="event-row"><div class="event-dot"></div><div class="event-time">10:00 AM</div><div><div class="event-name">Demo Fair</div><div class="event-desc">Present your project to judges and fellow hackers. Make it count.</div></div></div>
+      <div class="event-row"><div class="event-dot"></div><div class="event-time">12:00 PM</div><div><div class="event-name">Closing Ceremony &amp; Awards 🏆 <span class="event-badge" style="color:#f5e642;border-color:#f5e642;">Winners</span></div><div class="event-desc">Winners announced. Prizes awarded. Glory achieved. Memories made.</div></div></div>
+    </div>
+  </div>
+</div>
+<script>
+function showDay(id,btn){
+  document.querySelectorAll('.sched-main > div').forEach(d=>d.style.display='none');
+  document.getElementById(id).style.display='block';
+  document.querySelectorAll('.sched-day-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+</script>
+
+<footer>
+  <div class="footer-logo">TURNERHACKS 2026</div>
+  <div class="footer-links">
+    <a href="about.html">About</a><a href="schedule.html">Schedule</a><a href="prizes.html">Prizes</a><a href="sponsors.html">Sponsors</a><a href="faq.html">FAQ</a><a href="register.html">Register</a>
+  </div>
+  <div class="footer-copy">© 2026 TurnerHacks · Brampton City Hall · May 30, 2026</div>
+</footer>
+
+</body>
+</html>

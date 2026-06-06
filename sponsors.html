@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sponsors | TurnerHacks 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>*{margin:0;padding:0;box-sizing:border-box;}
+:root{--cyan:#00f5ff;--magenta:#ff00aa;--yellow:#f5e642;--green:#39ff14;--dark:#030812;--dark2:#070f1f;--panel:#0d1f3c;--text:#c8deff;--mono:'Share Tech Mono',monospace;--title:'Orbitron',sans-serif;--body:'Rajdhani',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,245,255,0.01) 2px,rgba(0,245,255,0.01) 4px);pointer-events:none;z-index:9999;}
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(3,8,18,0.88);border-bottom:1px solid rgba(0,245,255,0.12);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+.nav-logo{font-family:var(--title);font-size:1.1rem;font-weight:900;color:var(--cyan);letter-spacing:3px;text-decoration:none;text-shadow:0 0 20px rgba(0,245,255,0.4);}
+.nav-logo span{color:#fff;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{color:rgba(200,222,255,0.55);text-decoration:none;font-family:var(--mono);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;transition:color 0.2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--cyan);transition:width 0.3s;}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.btn-primary{font-family:var(--title);font-size:0.7rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;text-decoration:none;background:var(--cyan);color:var(--dark);padding:10px 24px;border:none;cursor:pointer;display:inline-block;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.2s;}
+.btn-primary:hover{background:#fff;box-shadow:0 0 30px rgba(0,245,255,0.5);}
+.btn-outline{font-family:var(--title);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;background:transparent;color:var(--cyan);padding:10px 24px;border:1px solid rgba(0,245,255,0.4);cursor:pointer;display:inline-block;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.2s;}
+.btn-outline:hover{background:rgba(0,245,255,0.08);}
+.si{padding:5rem 2rem;}
+.si-inner{max-width:1100px;margin:0 auto;}
+.sl{font-family:var(--mono);font-size:0.65rem;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:0.5rem;opacity:0.8;}
+.st{font-family:var(--title);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:1rem;line-height:1.1;}
+.sline{width:60px;height:3px;background:var(--cyan);margin-bottom:2.5rem;box-shadow:0 0 10px rgba(0,245,255,0.5);}
+.page-banner{min-height:45vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:9rem 2rem 5rem;position:relative;overflow:hidden;}
+.pb-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(0.2) saturate(0.5);}
+.pb-overlay{position:absolute;inset:0;}
+.pb-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,245,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.04) 1px,transparent 1px);background-size:60px 60px;}
+.pb-eyebrow{font-family:var(--mono);font-size:0.65rem;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:1.25rem;position:relative;z-index:1;opacity:0.7;}
+.pb-title{font-family:var(--title);font-size:clamp(3rem,9vw,6rem);font-weight:900;color:#fff;position:relative;z-index:1;line-height:0.9;text-shadow:0 0 60px rgba(0,245,255,0.3);}
+.pb-title .accent{color:var(--cyan);}
+.pb-sub{font-family:var(--mono);font-size:0.75rem;color:rgba(200,222,255,0.4);letter-spacing:3px;margin-top:1.5rem;position:relative;z-index:1;}
+.faq-item{border-bottom:1px solid rgba(0,245,255,0.08);}
+.faq-q{width:100%;background:none;border:none;color:#fff;font-family:var(--body);font-size:1.05rem;font-weight:600;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;cursor:pointer;text-align:left;gap:1rem;transition:color 0.2s;}
+.faq-q:hover{color:var(--cyan);}
+.faq-arrow{color:var(--cyan);font-family:var(--mono);font-size:1.2rem;transition:transform 0.3s;flex-shrink:0;}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;font-size:0.95rem;color:rgba(200,222,255,0.55);line-height:1.8;padding:0;}
+.faq-item.open .faq-arrow{transform:rotate(45deg);}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:1.5rem;}
+footer{background:var(--dark);border-top:1px solid rgba(0,245,255,0.07);padding:3rem 2rem;text-align:center;}
+.footer-logo{font-family:var(--title);font-size:1.5rem;font-weight:900;color:rgba(200,222,255,0.08);letter-spacing:6px;margin-bottom:1rem;}
+.footer-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;}
+.footer-links a{font-family:var(--mono);font-size:0.62rem;letter-spacing:2px;color:rgba(200,222,255,0.2);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+.footer-links a:hover{color:var(--cyan);}
+.footer-copy{font-family:var(--mono);font-size:0.6rem;color:rgba(200,222,255,0.12);letter-spacing:2px;}
+@media(max-width:700px){.nav-links{display:none;}}
+.spons-hero{min-height:45vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem 4rem 4rem;position:relative;overflow:hidden;background:var(--dark2);}
+.spons-hero::before{content:'POWERED BY';position:absolute;bottom:-0.1em;right:-0.02em;font-family:var(--title);font-size:10rem;font-weight:900;color:rgba(0,245,255,0.025);letter-spacing:5px;white-space:nowrap;line-height:1;}
+.tier-section{padding:5rem 2rem;}
+.tier-label{font-family:var(--mono);font-size:0.62rem;letter-spacing:5px;color:rgba(200,222,255,0.25);text-transform:uppercase;margin-bottom:2rem;display:flex;align-items:center;gap:1rem;}
+.tier-label::after{content:'';flex:1;height:1px;background:rgba(0,245,255,0.08);}
+.sponsor-card{display:flex;align-items:center;gap:3rem;padding:3rem 4rem;background:var(--dark2);border:1px solid rgba(0,245,255,0.1);margin-bottom:2px;transition:all 0.3s;position:relative;overflow:hidden;}
+.sponsor-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--ac,var(--cyan));box-shadow:0 0 15px var(--ac,var(--cyan));}
+.sponsor-card:hover{border-color:rgba(0,245,255,0.25);background:#0a1628;}
+.sponsor-logo-box{background:#fff;padding:1.5rem 2.5rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;min-width:200px;min-height:80px;}
+.sponsor-info-tier{font-family:var(--mono);font-size:0.6rem;letter-spacing:3px;color:var(--ac,var(--cyan));text-transform:uppercase;margin-bottom:0.5rem;opacity:0.7;}
+.sponsor-info-name{font-family:var(--title);font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:0.75rem;}
+.sponsor-info-desc{font-size:0.95rem;color:rgba(200,222,255,0.5);line-height:1.7;max-width:500px;}
+.sponsor-cta{margin-top:5rem;padding:4rem;background:var(--dark2);border:1px solid rgba(0,245,255,0.1);text-align:center;position:relative;overflow:hidden;}
+.sponsor-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,245,255,0.04) 0%,transparent 70%);}
+@media(max-width:768px){.sponsor-card{flex-direction:column;align-items:flex-start;padding:2rem;gap:1.5rem;}.spons-hero{padding:8rem 2rem 4rem;}}
+</style>
+</head>
+<body>
+<nav><a class="nav-logo" href="index.html">TURNER<span>HACKS</span></a><ul class="nav-links"><li><a href="about.html">About</a></li><li><a href="schedule.html">Schedule</a></li><li><a href="prizes.html">Prizes</a></li><li><a href="sponsors.html" class="active">Sponsors</a></li><li><a href="faq.html">FAQ</a></li></ul><a class="btn-primary" href="register.html">Register Free</a></nav>
+
+<div class="spons-hero">
+  <div style="position:relative;z-index:1;">
+    <p class="sl">// our sponsors</p>
+    <h1 class="st" style="font-size:clamp(2.5rem,7vw,5rem);line-height:0.9;">Powered<br/>By the <span style="color:var(--cyan);">Best.</span></h1>
+    <p style="font-family:var(--mono);font-size:0.72rem;color:rgba(200,222,255,0.35);letter-spacing:3px;margin-top:1.5rem;">// turnerhacks 2026 sponsors</p>
+  </div>
+</div>
+
+<section style="background:var(--dark);padding:5rem 2rem;">
+  <div class="si-inner">
+
+    <div class="tier-label">Platinum Sponsor</div>
+    <div class="sponsor-card" style="--ac:#00f5ff;">
+      <div class="sponsor-logo-box">
+        <svg width="220" height="60" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="8" width="42" height="7" rx="1" fill="#1a1a1a"/><rect x="4" y="18" width="38" height="7" rx="1" fill="#1a1a1a"/><rect x="8" y="28" width="34" height="7" rx="1" fill="#1a1a1a"/><rect x="4" y="38" width="38" height="7" rx="1" fill="#1a1a1a"/><rect x="0" y="48" width="42" height="7" rx="1" fill="#1a1a1a"/>
+          <text x="54" y="28" font-family="Arial Black,sans-serif" font-size="20" font-weight="900" fill="#1a1a1a">ZEBRA</text>
+          <text x="54" y="46" font-family="Arial,sans-serif" font-size="11" fill="#666" letter-spacing="2">TECHNOLOGIES</text>
+        </svg>
+      </div>
+      <div>
+        <div class="sponsor-info-tier">// Platinum Sponsor</div>
+        <div class="sponsor-info-name">Zebra Technologies</div>
+        <div class="sponsor-info-desc">Zebra Technologies empowers the frontline workers of the world with purpose-built technology — barcode printers, mobile computers, software, and more. Powering TurnerHacks as our headline sponsor.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:4rem;" class="tier-label">Gold Sponsors</div>
+
+    <div class="sponsor-card" style="--ac:#f5e642;margin-bottom:2px;">
+      <div class="sponsor-logo-box">
+        <svg width="190" height="60" viewBox="0 0 190 60" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="10" width="38" height="30" rx="4" fill="none" stroke="#1a1a1a" stroke-width="3"/><rect x="10" y="18" width="8" height="8" rx="1" fill="#1a1a1a"/><rect x="24" y="18" width="8" height="8" rx="1" fill="#1a1a1a"/><rect x="10" y="30" width="22" height="3" rx="1" fill="#1a1a1a"/><rect x="18" y="6" width="6" height="6" rx="1" fill="#1a1a1a"/><rect x="0" y="22" width="4" height="10" rx="1" fill="#1a1a1a"/><rect x="38" y="22" width="4" height="10" rx="1" fill="#1a1a1a"/><rect x="8" y="40" width="10" height="8" rx="1" fill="#1a1a1a"/><rect x="24" y="40" width="10" height="8" rx="1" fill="#1a1a1a"/>
+          <text x="52" y="26" font-family="Arial Black,sans-serif" font-size="14" font-weight="900" fill="#1a1a1a">ZEBRA</text>
+          <text x="52" y="44" font-family="Arial Black,sans-serif" font-size="14" font-weight="900" fill="#1a1a1a">ROBOTICS</text>
+        </svg>
+      </div>
+      <div>
+        <div class="sponsor-info-tier">// Gold Sponsor</div>
+        <div class="sponsor-info-name">Zebra Robotics</div>
+        <div class="sponsor-info-desc">STEM coding and robotics programs for students across Ontario. Sponsoring the Hardware & Robotics track and bringing hands-on mentorship to TurnerHacks.</div>
+      </div>
+    </div>
+
+    <div class="sponsor-card" style="--ac:#ff6600;">
+      <div class="sponsor-logo-box">
+        <svg width="190" height="60" viewBox="0 0 190 60" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="22" cy="28" r="10" fill="none" stroke="#e85d04" stroke-width="3"/><circle cx="22" cy="28" r="4" fill="#e85d04"/><rect x="19" y="12" width="6" height="7" rx="1" fill="#e85d04"/><rect x="19" y="37" width="6" height="7" rx="1" fill="#e85d04"/><rect x="6" y="25" width="7" height="6" rx="1" fill="#e85d04"/><rect x="31" y="25" width="7" height="6" rx="1" fill="#e85d04"/><path d="M42 28 L50 22 L50 26 L58 26 L58 30 L50 30 L50 34 Z" fill="#e85d04"/>
+          <text x="65" y="22" font-family="Arial Black,sans-serif" font-size="11" font-weight="900" fill="#1a1a1a">MAKE STUFF</text>
+          <text x="65" y="38" font-family="Arial Black,sans-serif" font-size="11" font-weight="900" fill="#e85d04">MOVE</text>
+          <text x="65" y="52" font-family="Arial,sans-serif" font-size="7" fill="#999" letter-spacing="1">STEM + TRADES EDUCATION</text>
+        </svg>
+      </div>
+      <div>
+        <div class="sponsor-info-tier">// Gold Sponsor</div>
+        <div class="sponsor-info-name">Make Stuff Move</div>
+        <div class="sponsor-info-desc">Bridging the gap between STEM and trades education through hands-on learning kits, mobile maker spaces, and real tools for real students.</div>
+      </div>
+    </div>
+
+    <div class="sponsor-cta">
+      <div style="position:relative;z-index:1;">
+        <p class="sl" style="justify-content:center;">// become a sponsor</p>
+        <h2 class="st" style="margin-bottom:1rem;">Want Your Brand<br/>Here?</h2>
+        <p style="color:rgba(200,222,255,0.45);font-size:1rem;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto;">Reach 200+ of the brightest student builders in Peel Region. Sponsorship packages available at multiple tiers.</p>
+        <a href="mailto:turnerhacks@email.com" class="btn-primary">Get in Touch</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">TURNERHACKS 2026</div>
+  <div class="footer-links">
+    <a href="about.html">About</a><a href="schedule.html">Schedule</a><a href="prizes.html">Prizes</a><a href="sponsors.html">Sponsors</a><a href="faq.html">FAQ</a><a href="register.html">Register</a>
+  </div>
+  <div class="footer-copy">© 2026 TurnerHacks · Brampton City Hall · May 30, 2026</div>
+</footer>
+
+</body>
+</html>

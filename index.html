@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TurnerHacks 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--cyan:#00f5ff;--magenta:#ff00aa;--yellow:#f5e642;--green:#39ff14;--dark:#030812;--dark2:#070f1f;--panel:#0d1f3c;--text:#c8deff;--mono:'Share Tech Mono',monospace;--title:'Orbitron',sans-serif;--body:'Rajdhani',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:var(--dark);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;overflow-x:hidden;}
+/* SCANLINES */
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,245,255,0.012) 2px,rgba(0,245,255,0.012) 4px);pointer-events:none;z-index:9999;}
+/* NAV */
+nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(3,8,18,0.85);border-bottom:1px solid rgba(0,245,255,0.15);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;}
+.nav-logo{font-family:var(--title);font-size:1.1rem;font-weight:900;color:var(--cyan);letter-spacing:3px;text-decoration:none;text-shadow:0 0 20px rgba(0,245,255,0.5);}
+.nav-logo span{color:#fff;}
+.nav-links{display:flex;gap:2.5rem;list-style:none;}
+.nav-links a{color:rgba(200,222,255,0.6);text-decoration:none;font-family:var(--mono);font-size:0.7rem;letter-spacing:2px;text-transform:uppercase;transition:all 0.2s;position:relative;}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--cyan);transition:width 0.3s;}
+.nav-links a:hover{color:var(--cyan);}
+.nav-links a:hover::after{width:100%;}
+.btn-primary{font-family:var(--title);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;background:var(--cyan);color:var(--dark);padding:10px 24px;border:none;cursor:pointer;display:inline-block;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.2s;font-weight:900;}
+.btn-primary:hover{background:#fff;box-shadow:0 0 30px rgba(0,245,255,0.6);}
+.btn-outline{font-family:var(--title);font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;background:transparent;color:var(--cyan);padding:10px 24px;border:1px solid rgba(0,245,255,0.5);cursor:pointer;display:inline-block;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:all 0.2s;}
+.btn-outline:hover{background:rgba(0,245,255,0.1);border-color:var(--cyan);}
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 2rem 4rem;position:relative;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1800&q=80');background-size:cover;background-position:center top;filter:brightness(0.25) saturate(0.6);}
+.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse at center top,rgba(0,245,255,0.08) 0%,transparent 60%),linear-gradient(to bottom,rgba(3,8,18,0.1) 0%,rgba(3,8,18,0.95) 100%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,245,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(0,245,255,0.05) 1px,transparent 1px);background-size:80px 80px;animation:gridMove 25s linear infinite;}
+@keyframes gridMove{from{background-position:0 0;}to{background-position:80px 80px;}}
+.hero-particles{position:absolute;inset:0;overflow:hidden;}
+.particle{position:absolute;width:2px;height:2px;background:var(--cyan);border-radius:50%;animation:float linear infinite;opacity:0;}
+@keyframes float{0%{transform:translateY(100vh) translateX(0);opacity:0;}10%{opacity:1;}90%{opacity:1;}100%{transform:translateY(-100px) translateX(60px);opacity:0;}}
+.hero-eyebrow{font-family:var(--mono);font-size:0.75rem;letter-spacing:4px;color:var(--cyan);text-transform:uppercase;margin-bottom:1.5rem;position:relative;z-index:1;border:1px solid rgba(0,245,255,0.3);padding:6px 20px;display:inline-block;background:rgba(0,245,255,0.05);}
+.hero-eyebrow::before{content:'▶ ';opacity:0.6;}
+h1.hero-title{font-family:var(--title);font-size:clamp(4rem,14vw,10rem);font-weight:900;color:#fff;line-height:0.85;letter-spacing:-3px;position:relative;z-index:1;text-shadow:0 0 80px rgba(0,245,255,0.3);}
+h1.hero-title .accent{color:var(--cyan);text-shadow:0 0 40px rgba(0,245,255,0.8),0 0 80px rgba(0,245,255,0.4);}
+.hero-sub{font-family:var(--body);font-size:1.4rem;font-weight:300;color:rgba(200,222,255,0.8);margin:2rem 0 1rem;position:relative;z-index:1;letter-spacing:2px;}
+.hero-meta{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;position:relative;z-index:1;}
+.hero-meta-item{font-family:var(--mono);font-size:0.72rem;color:rgba(200,222,255,0.45);letter-spacing:2px;display:flex;align-items:center;gap:6px;}
+.hero-meta-item::before{content:'//';color:var(--cyan);opacity:0.6;}
+.cta-group{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+/* COUNTDOWN */
+.countdown-section{background:var(--dark2);border-top:1px solid rgba(0,245,255,0.1);border-bottom:1px solid rgba(0,245,255,0.1);padding:3rem 2rem;text-align:center;position:relative;overflow:hidden;}
+.countdown-section::before{content:'LAUNCHING';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--title);font-size:10rem;font-weight:900;color:rgba(0,245,255,0.02);letter-spacing:10px;white-space:nowrap;}
+.countdown-label{font-family:var(--mono);font-size:0.65rem;letter-spacing:4px;color:rgba(200,222,255,0.3);text-transform:uppercase;margin-bottom:2rem;}
+.countdown-units{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.cd-unit{text-align:center;position:relative;}
+.cd-num{font-family:var(--title);font-size:clamp(2.5rem,8vw,5rem);font-weight:900;color:#fff;display:block;line-height:1;text-shadow:0 0 30px rgba(0,245,255,0.4);min-width:100px;}
+.cd-lbl{font-family:var(--mono);font-size:0.6rem;letter-spacing:3px;color:rgba(200,222,255,0.3);text-transform:uppercase;margin-top:0.5rem;}
+.cd-sep{font-family:var(--title);font-size:3rem;color:rgba(0,245,255,0.2);align-self:center;padding:0 0.5rem;margin-top:-1rem;}
+/* NAV PANELS */
+.nav-panels{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:320px 320px;gap:2px;background:rgba(0,245,255,0.06);}
+.npanel{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem;text-decoration:none;background:var(--dark2);transition:all 0.4s;}
+.npanel::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(3,8,18,0.95) 0%,rgba(3,8,18,0.5) 50%,transparent 100%);transition:opacity 0.4s;}
+.npanel:hover::before{opacity:0.7;}
+.npanel:hover{transform:scale(1.01);z-index:2;}
+.npanel-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 0.6s;filter:brightness(0.3) saturate(0.5);}
+.npanel:hover .npanel-bg{transform:scale(1.08);filter:brightness(0.4) saturate(0.7);}
+.npanel-num{font-family:var(--mono);font-size:0.6rem;letter-spacing:4px;color:var(--accent,var(--cyan));margin-bottom:0.5rem;position:relative;z-index:1;opacity:0.7;}
+.npanel-title{font-family:var(--title);font-size:1.5rem;font-weight:900;color:#fff;position:relative;z-index:1;margin-bottom:0.5rem;line-height:1.1;}
+.npanel-desc{font-family:var(--mono);font-size:0.68rem;color:rgba(200,222,255,0.45);position:relative;z-index:1;letter-spacing:1px;}
+.npanel-arrow{position:absolute;top:1.5rem;right:1.5rem;font-size:1.5rem;color:rgba(0,245,255,0.2);transition:all 0.3s;z-index:1;}
+.npanel:hover .npanel-arrow{color:var(--accent,var(--cyan));transform:translate(5px,-5px);}
+.npanel-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--accent,var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
+.npanel:hover .npanel-bar{transform:scaleX(1);}
+.npanel.wide{grid-column:span 2;}
+.npanel.tall{grid-row:span 2;}
+@media(max-width:768px){.nav-panels{grid-template-columns:1fr;grid-template-rows:auto;}.npanel.wide,.npanel.tall{grid-column:span 1;grid-row:span 1;min-height:240px;}}
+footer{background:var(--dark);border-top:1px solid rgba(0,245,255,0.08);padding:3rem 2rem;text-align:center;}
+.footer-logo{font-family:var(--title);font-size:1.5rem;font-weight:900;color:rgba(200,222,255,0.15);letter-spacing:4px;margin-bottom:1rem;}
+.footer-links{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;}
+.footer-links a{font-family:var(--mono);font-size:0.65rem;letter-spacing:2px;color:rgba(200,222,255,0.3);text-decoration:none;text-transform:uppercase;transition:color 0.2s;}
+.footer-links a:hover{color:var(--cyan);}
+.footer-copy{font-family:var(--mono);font-size:0.62rem;color:rgba(200,222,255,0.15);letter-spacing:2px;}
+@media(max-width:700px){.nav-links{display:none;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">TURNER<span>HACKS</span></a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="prizes.html">Prizes</a></li>
+    <li><a href="sponsors.html">Sponsors</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+  </ul>
+  <a class="btn-primary" href="register.html">Register Free</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-eyebrow">May 30, 2026 &nbsp;·&nbsp; Brampton City Hall</div>
+  <h1 class="hero-title">TURNER<br/><span class="accent">HACKS</span></h1>
+  <p class="hero-sub">24 Hours. Infinite Ideas. One Stage.</p>
+  <div class="hero-meta">
+    <span class="hero-meta-item">Peel Region's Biggest Student Hackathon</span>
+    <span class="hero-meta-item">High School Students Only</span>
+    <span class="hero-meta-item">100% Free to Attend</span>
+  </div>
+  <div class="cta-group">
+    <a class="btn-primary" href="register.html">Register Now — It's Free</a>
+    <a class="btn-outline" href="about.html">What is TurnerHacks?</a>
+  </div>
+</section>
+
+<div class="countdown-section">
+  <p class="countdown-label">// mission launches in</p>
+  <div class="countdown-units">
+    <div class="cd-unit"><span class="cd-num" id="cd-d">00</span><span class="cd-lbl">Days</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-num" id="cd-h">00</span><span class="cd-lbl">Hours</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-num" id="cd-m">00</span><span class="cd-lbl">Minutes</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit"><span class="cd-num" id="cd-s">00</span><span class="cd-lbl">Seconds</span></div>
+  </div>
+</div>
+
+<div class="nav-panels">
+  <a class="npanel wide" href="about.html" style="--accent:#00f5ff;">
+    <div class="npanel-bg" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=900&q=70');"></div>
+    <div class="npanel-bar"></div>
+    <span class="npanel-arrow">↗</span>
+    <div class="npanel-num">01 // ABOUT</div>
+    <div class="npanel-title">What is<br/>TurnerHacks?</div>
+    <div class="npanel-desc">24hrs · 200+ hackers · brampton city hall</div>
+  </a>
+  <a class="npanel" href="schedule.html" style="--accent:#39ff14;">
+    <div class="npanel-bg" style="background:#050d18;"></div>
+    <div class="npanel-bar"></div>
+    <span class="npanel-arrow">↗</span>
+    <div class="npanel-num">02 // SCHEDULE</div>
+    <div class="npanel-title">Event<br/>Timeline</div>
+    <div class="npanel-desc">may 30–31 · full 24hr schedule</div>
+  </a>
+  <a class="npanel" href="prizes.html" style="--accent:#f5e642;">
+    <div class="npanel-bg" style="background:#08060a;"></div>
+    <div class="npanel-bar"></div>
+    <span class="npanel-arrow">↗</span>
+    <div class="npanel-num">03 // PRIZES</div>
+    <div class="npanel-title">$5,000+<br/>Up for Grabs</div>
+    <div class="npanel-desc">cash · swag · glory · 4 tracks</div>
+  </a>
+  <a class="npanel" href="sponsors.html" style="--accent:#00f5ff;">
+    <div class="npanel-bg" style="background:#050d18;"></div>
+    <div class="npanel-bar"></div>
+    <span class="npanel-arrow">↗</span>
+    <div class="npanel-num">04 // SPONSORS</div>
+    <div class="npanel-title">Powered<br/>By</div>
+    <div class="npanel-desc">zebra technologies + more</div>
+  </a>
+  <a class="npanel" href="faq.html" style="--accent:#ff00aa;">
+    <div class="npanel-bg" style="background:#08050d;"></div>
+    <div class="npanel-bar"></div>
+    <span class="npanel-arrow">↗</span>
+    <div class="npanel-num">05 // FAQ</div>
+    <div class="npanel-title">Got<br/>Questions?</div>
+    <div class="npanel-desc">we've got answers</div>
+  </a>
+  <a class="npanel" href="register.html" style="--accent:#00f5ff;background:var(--panel);border:1px solid rgba(0,245,255,0.2);">
+    <div class="npanel-bar" style="background:var(--cyan);transform:scaleX(1);"></div>
+    <span class="npanel-arrow" style="color:var(--cyan);">↗</span>
+    <div class="npanel-num" style="color:var(--cyan);">06 // REGISTER</div>
+    <div class="npanel-title" style="color:var(--cyan);text-shadow:0 0 20px rgba(0,245,255,0.5);">Apply<br/>Now →</div>
+    <div class="npanel-desc" style="color:rgba(0,245,255,0.5);">free · spots limited · may 30</div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-logo">TURNERHACKS 2026</div>
+  <div class="footer-links">
+    <a href="about.html">About</a>
+    <a href="schedule.html">Schedule</a>
+    <a href="prizes.html">Prizes</a>
+    <a href="sponsors.html">Sponsors</a>
+    <a href="faq.html">FAQ</a>
+    <a href="register.html">Register</a>
+  </div>
+  <div class="footer-copy">© 2026 TurnerHacks · Brampton City Hall · May 30, 2026</div>
+</footer>
+
+<script>
+// Countdown
+const target=new Date('2026-05-30T09:00:00');
+function tick(){
+  const now=new Date();let diff=Math.max(0,target-now);
+  const d=Math.floor(diff/86400000);diff-=d*86400000;
+  const h=Math.floor(diff/3600000);diff-=h*3600000;
+  const m=Math.floor(diff/60000);diff-=m*60000;
+  const s=Math.floor(diff/1000);
+  const pad=n=>String(n).padStart(2,'0');
+  document.getElementById('cd-d').textContent=pad(d);
+  document.getElementById('cd-h').textContent=pad(h);
+  document.getElementById('cd-m').textContent=pad(m);
+  document.getElementById('cd-s').textContent=pad(s);
+}
+tick();setInterval(tick,1000);
+// Particles
+const pc=document.getElementById('particles');
+for(let i=0;i<30;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  p.style.cssText=`left:${Math.random()*100}%;animation-duration:${6+Math.random()*12}s;animation-delay:${Math.random()*8}s;width:${Math.random()<0.3?3:2}px;height:${Math.random()<0.3?3:2}px;background:${Math.random()<0.5?'#00f5ff':'#39ff14'};opacity:0;`;
+  pc.appendChild(p);
+}
+</script>
+</body>
+</html>
